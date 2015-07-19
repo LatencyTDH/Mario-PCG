@@ -1,19 +1,6 @@
 StartTime = -17
-StompKill:  EnemyType = BulletBill time = 34
-Jump:  StTime = 25 EdTime = 45
-LeftMove: StTime = 46 EdTime = 5
-StompKill:  EnemyType = BulletBill time = 60
-RightMove: StTime = 52 EdTime = 9
-Jump:  StTime = 47 EdTime = 71
-LeftMove: StTime = 62 EdTime = 16
-Jump:  StTime = 80 EdTime = 95
-RightMove: StTime = 74 EdTime = 47
-Jump:  StTime = 96 EdTime = 115
-Jump:  StTime = 118 EdTime = 128
-Jump:  StTime = 133 EdTime = 148
-RightMove: StTime = 126 EdTime = 76
-RunState: StTime = 24 EdTime = 155
-LittleState: StTime = -17 EdTime = 155
-Totaltime = 172
-Jump:  StTime = 152 EdTime = 155
-Die:  EnemyType = BulletBill 
+RunState: StTime = -17 EdTime = 8
+RightMove: StTime = -16 EdTime = 52
+LittleState: StTime = -17 EdTime = 12
+Totaltime = 29
+Die:  Gap 

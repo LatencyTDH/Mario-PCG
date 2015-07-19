@@ -14,6 +14,7 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
     static int fieldType = LevelInterface.TYPE_CASTLE;
 	public LevelInterface generateLevel(GamePlay playerMetrics) {
 		this.playerMetrics = playerMetrics;
+        fieldType = new Random().nextInt(3);
 		return optimize(1.0,1000,0.9);
 	}
 

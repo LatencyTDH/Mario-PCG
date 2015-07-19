@@ -22,7 +22,6 @@ public class MyLevel extends RandomLevel{
      public int gaps = 0;
 
 
-
     private static Random levelSeedRandom = new Random();
     public static long lastSeed;
 
