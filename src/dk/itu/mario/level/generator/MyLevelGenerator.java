@@ -23,7 +23,6 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
         this.playerMetrics = playerMetrics;
         fieldType = generator.nextInt(3);
         MyLevel level = optimize(temperature, coolingRate);
-        level.writeLevelSerial();
         return level;
     }
 
@@ -88,7 +87,7 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
             change[i] = 0 + (0.2 - 0) * generator.nextDouble();
         }
 
-        double difficulty = Math.min(Math.max(old.difficulty + (10 * change[0] * signs[0]), 1), 35);
+        double difficulty = Math.min(Math.max(old.difficulty + (10 * change[0] * signs[0]), 1), 4);
         double jump = Math.max(old.probBuildJump + (change[1] * signs[1]), 0);
         double cannons = Math.max(old.probBuildCannons + (change[2] * signs[2]), 0);
         double hills = Math.max(old.probBuildHillStraight + (change[3] * signs[3]), 0);
@@ -104,7 +103,6 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
     public static double evaluate(MyLevel solution) {
 
         double fun =
-
 
                 2 * playerMetrics.emptyBlocksDestroyed +
                         0.6 * playerMetrics.enemyKillByKickingShell +

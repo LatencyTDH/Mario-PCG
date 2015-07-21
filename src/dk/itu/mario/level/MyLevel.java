@@ -228,7 +228,8 @@ public class MyLevel extends RandomLevel {
             }
         }
 
-        addEnemyLine(xo + 1, xo + length - 1, floor - 1);
+//        addEnemyLine(xo + 1, xo + length - 1, floor - 1);
+        addMonsters(xo + 1, xo + length - 1, floor - 1);
 
         int h = floor;
 
@@ -249,7 +250,8 @@ public class MyLevel extends RandomLevel {
                 } else {
                     occupied[xxo - xo] = true;
                     occupied[xxo - xo + l] = true;
-                    addEnemyLine(xxo, xxo + l, h - 1);
+//                    addEnemyLine(xxo, xxo + l, h - 1);
+                    addMonsters(xxo, xxo + l, h - 1);
                     if (random.nextInt(4) == 0) {
                         decorate(xxo - 1, xxo + l + 1, h);
                         keepGoing = false;
@@ -282,19 +284,42 @@ public class MyLevel extends RandomLevel {
         return length;
     }
 
-    private void addEnemyLine(int x0, int x1, int y) {
-        for (int x = x0; x < x1; x++) {
-            if (random.nextInt(35) < difficulty + 1) {
-                int type = random.nextInt(4);
+    // Ensures that there are monsters in a given area.
+    public void addMonsters(int start, int end, int levelHeight)
+    {
+        double pitEnemies = 0;
+        int y = levelHeight - 1;
 
-                if (difficulty < 1) {
-                    type = Enemy.ENEMY_GOOMBA;
-                } else if (difficulty < 3) {
-                    type = random.nextInt(VERY_HARD_ENEMY_TYPES);
-                }
+        for(int x = start; x < end; x++)
+        {
+            int type = random.nextInt(4);
 
+            if(difficulty < 1)
+            {
+                type = Enemy.ENEMY_GOOMBA;
+            }
+            else if(difficulty <= 1)
+            {
+                type = random.nextInt(EASY_ENEMY_TYPES);
+            } else if (difficulty <= 2) {
+                type = random.nextInt(MEDIUM_ENEMY_TYPES);
+            } else if (difficulty <= 3) {
+                type = random.nextInt(HARD_ENEMY_TYPES);
+            } else if (difficulty <=4) {
+                type = random.nextInt(VERY_HARD_ENEMY_TYPES);
+            }
+
+            if(x == end - 1 && pitEnemies == 0)
+            {
+                int pos = random.nextInt(end - start);
+                setSpriteTemplate(start + pos, y, new SpriteTemplate(type, random.nextInt(35) < difficulty));
                 ENEMIES++;
+            }
+            else if(random.nextDouble() < (1.0 / (pitEnemies + 4)))
+            {
                 setSpriteTemplate(x, y, new SpriteTemplate(type, random.nextInt(35) < difficulty));
+                ENEMIES++;
+                pitEnemies++;
             }
         }
     }
@@ -380,8 +405,8 @@ public class MyLevel extends RandomLevel {
         boolean rocks = true;
 
         //add an enemy line above the box
-        addEnemyLine(xStart + 1, xLength - 1, floor - 1);
-
+//        addEnemyLine(xStart + 1, xLength - 1, floor - 1);
+        addMonsters(xStart + 1, xLength - 1, floor - 1);
         int s = random.nextInt(4);
         int e = random.nextInt(4);
 
