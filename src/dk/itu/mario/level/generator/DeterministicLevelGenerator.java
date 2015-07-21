@@ -2,13 +2,11 @@ package dk.itu.mario.level.generator;
 
 import dk.itu.mario.MarioInterface.GamePlay;
 import dk.itu.mario.MarioInterface.LevelInterface;
-import dk.itu.mario.level.CustomizedLevel;
-import dk.itu.mario.level.RandomLevel;
+import dk.itu.mario.level.MyLevel;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
-import java.util.Random;
 
 /**
  * Creates an already saved map
@@ -25,13 +23,15 @@ public class DeterministicLevelGenerator extends CustomizedLevelGenerator {
         return null;
     }
 
-    private RandomLevel readLevel(String filename) {
-        RandomLevel level = null;
+    private MyLevel readLevel(String filename) {
+        MyLevel level = null;
         try(ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(filename)))) {
-            level =  (RandomLevel) ois.readObject();
+            level =  (MyLevel) ois.readObject();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Can't load map file!");
         }
+        System.err.println(level.getMap());
         return level;
     }
+
 }

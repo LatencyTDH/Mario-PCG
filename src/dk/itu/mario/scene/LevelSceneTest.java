@@ -1,37 +1,24 @@
 package dk.itu.mario.scene;
 
-import java.awt.GraphicsConfiguration;
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Random;
-
-
-import dk.itu.mario.level.BgLevelGenerator;
 import dk.itu.mario.MarioInterface.GamePlay;
+import dk.itu.mario.engine.*;
 import dk.itu.mario.engine.sonar.FixedSoundSource;
-import dk.itu.mario.engine.sprites.CoinAnim;
-import dk.itu.mario.engine.sprites.FireFlower;
-import dk.itu.mario.engine.sprites.Mario;
-import dk.itu.mario.engine.sprites.Mushroom;
-import dk.itu.mario.engine.sprites.Particle;
-import dk.itu.mario.engine.sprites.Sprite;
+import dk.itu.mario.engine.sprites.*;
 import dk.itu.mario.engine.util.FileHandler;
-
-import dk.itu.mario.engine.Art;
-import dk.itu.mario.engine.BgRenderer;
-import dk.itu.mario.engine.DataRecorder;
-import dk.itu.mario.engine.LevelRenderer;
-import dk.itu.mario.engine.MarioComponent;
-import dk.itu.mario.level.CustomizedLevel;
+import dk.itu.mario.level.BgLevelGenerator;
 import dk.itu.mario.level.Level;
+import dk.itu.mario.level.MyLevel;
 import dk.itu.mario.level.RandomLevel;
 import dk.itu.mario.level.generator.CustomizedLevelGenerator;
 import dk.itu.mario.level.generator.DeterministicLevelGenerator;
 import dk.itu.mario.level.generator.MyLevelGenerator;
-import dk.itu.mario.level.MyLevel;
-import dk.itu.mario.engine.Play;
 import dk.itu.mario.res.ResourcesManager;
+
+import java.awt.*;
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class LevelSceneTest extends LevelScene {
 
@@ -40,7 +27,7 @@ public class LevelSceneTest extends LevelScene {
     private int point = -1;
     private int[] checkPoints;
     private boolean isCustom;
-    private boolean isSaved;
+    private boolean isSaved = false;
 
     private String txtFileToUse = "player.txt";
 
@@ -81,7 +68,7 @@ public class LevelSceneTest extends LevelScene {
                 }
                 GamePlay gp = new GamePlay();
                 gp = gp.read(txtFileToUse);
-                currentLevel = (Level) clg.generateLevel(gp);
+                currentLevel = (MyLevel) clg.generateLevel(gp);
 
                 //You can use the following commands if you want to benefit from
                 //	the interface containing detailed information
@@ -89,11 +76,12 @@ public class LevelSceneTest extends LevelScene {
 
             } else
                 currentLevel = new RandomLevel(320, 15, levelSeed, levelDifficulty, levelType);
-
-        try {
-            level = currentLevel.clone();
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
+        if (!isSaved) {
+            try {
+                level = currentLevel.clone();
+            } catch (CloneNotSupportedException e) {
+                e.printStackTrace();
+            }
         }
 
         //level is always overground

@@ -1,34 +1,19 @@
 package dk.itu.mario.engine;
 
-import java.awt.*;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.image.*;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Random;
-
-import javax.sound.sampled.LineUnavailableException;
-import javax.swing.*;
-
-
-import dk.itu.mario.level.Level;
-import dk.itu.mario.level.RandomLevel;
-import dk.itu.mario.scene.LevelScene;
-import dk.itu.mario.scene.LevelSceneTest;
-import dk.itu.mario.scene.LoseScene;
-import dk.itu.mario.scene.Scene;
-import dk.itu.mario.scene.WinScene;
-
 import dk.itu.mario.engine.sonar.FakeSoundEngine;
 import dk.itu.mario.engine.sonar.SonarSoundEngine;
 import dk.itu.mario.engine.sprites.Mario;
+import dk.itu.mario.level.RandomLevel;
+import dk.itu.mario.scene.LevelScene;
+import dk.itu.mario.scene.LevelSceneTest;
+import dk.itu.mario.scene.Scene;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.image.VolatileImage;
+import java.util.Random;
 
 public class MarioComponent extends JComponent implements Runnable, KeyListener, FocusListener, MouseListener
 	{
@@ -189,8 +174,7 @@ public class MarioComponent extends JComponent implements Runnable, KeyListener,
 
 		        boolean naiveTiming = true;
 		        if (isCustom) {
-
-					toCustomGame(txtFileToUse, isSaved);
+                    toCustomGame(txtFileToUse, isSaved);
 				}
 		        else {
 					toRandomGame();
@@ -353,9 +337,10 @@ public class MarioComponent extends JComponent implements Runnable, KeyListener,
 		    public void toCustomGame(String txtFileToUse, boolean isSaved){
 
 				if (isSaved) {
-					randomLevel = new LevelSceneTest(graphicsConfiguration,this,new Random().nextLong(),0,0,true, true);
+					randomLevel = new LevelSceneTest(graphicsConfiguration,this,new Random().nextLong(),0, 0, true, true);
 				} else {
-					randomLevel = new LevelSceneTest(graphicsConfiguration, this, new Random().nextLong(), 0, 0, true, txtFileToUse);
+					randomLevel = new LevelSceneTest(graphicsConfiguration, this, new Random().nextLong(), 0, 0,
+                            true, txtFileToUse);
 				}
 
 		    	Mario.fire = false;

@@ -1,25 +1,30 @@
 package dk.itu.mario.level.generator;
 
-import java.util.Random;
-
 import dk.itu.mario.MarioInterface.GamePlay;
 import dk.itu.mario.MarioInterface.LevelGenerator;
 import dk.itu.mario.MarioInterface.LevelInterface;
 import dk.itu.mario.level.MyLevel;
+
+import java.util.Random;
 
 public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelGenerator {
     static GamePlay playerMetrics;
     static double current_fun = 0;
     static int fieldType = LevelInterface.TYPE_CASTLE;
 
-    private double temperature = 10000.0;
+    public static int SEED = 42;
+
+    private double temperature = 100000.0;
     private double coolingRate = 0.9;
+    private static Random generator = new Random(SEED);
     public static final double ABSOLUTE_TEMPERATURE = .00001;
 
     public LevelInterface generateLevel(GamePlay playerMetrics) {
         this.playerMetrics = playerMetrics;
-        fieldType = new Random().nextInt(3);
-        return optimize(temperature, coolingRate);
+        fieldType = generator.nextInt(3);
+        MyLevel level = optimize(temperature, coolingRate);
+        level.writeLevelSerial();
+        return level;
     }
 
     @Override
@@ -44,8 +49,7 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
             }
             //change to a worse solution with certain probabilty
             else {
-                Random rand = new Random();
-                Double randomValue = rand.nextDouble();
+                Double randomValue = generator.nextDouble();
                 if (randomValue < acceptanceProbability(fitness, newFitness, t)) {
                     currentSolution = newSolution;
                 }
@@ -75,15 +79,13 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
 
     //method for mutating(changing a bit) the current solution
     public static MyLevel mutate(MyLevel old) {
-        Random rand = new Random();
         int[] signs = new int[6];
         double[] change = new double[6];
         double pickedSign = 0.5;
-        double pickedNumber = 0.5;
         for (int i = 0; i < 6; i++) {
-            pickedSign = rand.nextDouble();
+            pickedSign = generator.nextDouble();
             signs[i] = pickedSign < 0.5 ? -1 : 1;
-            change[i] = 0 + (0.2 - 0) * rand.nextDouble();
+            change[i] = 0 + (0.2 - 0) * generator.nextDouble();
         }
 
         double difficulty = Math.min(Math.max(old.difficulty + (10 * change[0] * signs[0]), 1), 35);
@@ -93,7 +95,7 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
         double tubes = Math.max(old.probBuildTubes + (change[4] * signs[4]), 0);
         double straight = Math.max(old.probBuildStraight + (change[5] * signs[5]), 0);
         double total = jump + cannons + hills + tubes + straight;
-        return new MyLevel(320, 15, new Random().nextLong(), (int) difficulty, fieldType, playerMetrics,
+        return new MyLevel(320, 15, generator.nextLong(), (int) difficulty, fieldType, playerMetrics,
                 jump / total, hills / total, straight / total, tubes / total, cannons / total);
     }
 
@@ -117,5 +119,9 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
         return fun;
     }
 
+    public static double getDifficulty() {
+        //TODO: evaluate level difficulty
+        return 0.0;
+    }
 
 }

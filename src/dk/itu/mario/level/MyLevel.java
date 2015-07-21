@@ -1,15 +1,13 @@
 package dk.itu.mario.level;
 
+import dk.itu.mario.MarioInterface.GamePlay;
+import dk.itu.mario.MarioInterface.LevelInterface;
+import dk.itu.mario.engine.sprites.Enemy;
+import dk.itu.mario.engine.sprites.SpriteTemplate;
+
 import java.io.*;
 import java.util.Arrays;
 import java.util.Random;
-
-import com.sun.corba.se.impl.orbutil.ObjectWriter;
-import dk.itu.mario.MarioInterface.Constraints;
-import dk.itu.mario.MarioInterface.GamePlay;
-import dk.itu.mario.MarioInterface.LevelInterface;
-import dk.itu.mario.engine.sprites.SpriteTemplate;
-import dk.itu.mario.engine.sprites.Enemy;
 
 
 public class MyLevel extends RandomLevel {
@@ -20,8 +18,13 @@ public class MyLevel extends RandomLevel {
     public int BLOCKS_POWER = 0; // the number of power blocks
     public int COINS = 0; //These are the coins in boxes that Mario collect
     //Custom values
+    public int EASY_ENEMY_TYPES = 1;
+    public int MEDIUM_ENEMY_TYPES = 3;
+    public int HARD_ENEMY_TYPES = 5;
     public int VERY_HARD_ENEMY_TYPES = 7; //number of different enemies encountered by Mario
     public int gaps = 0;
+    public byte[][] map = getMap();
+    public SpriteTemplate[][] st = getSpriteTemplate();
 
 
     private static Random levelSeedRandom = new Random();
@@ -535,14 +538,14 @@ public class MyLevel extends RandomLevel {
         }
     }
 
-    public RandomLevel clone() throws CloneNotSupportedException {
+    public MyLevel clone() throws CloneNotSupportedException {
 
-        RandomLevel clone = new RandomLevel(width, height);
+        MyLevel clone = new MyLevel(width, height);
 
         clone.xExit = xExit;
         clone.yExit = yExit;
-        byte[][] map = getMap();
-        SpriteTemplate[][] st = getSpriteTemplate();
+        map = getMap();
+        st = getSpriteTemplate();
 
         for (int i = 0; i < map.length; i++)
             for (int j = 0; j < map[i].length; j++) {
@@ -555,7 +558,6 @@ public class MyLevel extends RandomLevel {
         clone.ENEMIES = ENEMIES;
         clone.COINS = COINS;
 
-        writeLevelSerial(clone);
         return clone;
 
     }
@@ -568,9 +570,9 @@ public class MyLevel extends RandomLevel {
         }
     }
 
-    private void writeLevelSerial(RandomLevel level) {
+    public void writeLevelSerial() {
         try(ObjectOutputStream out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("map.txt")))) {
-            out.writeObject(level);
+            out.writeObject(this);
         } catch (IOException e) {
             e.printStackTrace();
         }

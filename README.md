@@ -15,6 +15,6 @@ To run this project,
 
 **ant play**: Plays a custom level that uses procedural content generation.
 
-**ant play-default**: Play a random level built using preauthored chunks.
+**ant play-default**: Plays a random level that is built using pre-authored chunks.
 
 **ant clean**: Removes the .class files contained in the bin/ directory.
