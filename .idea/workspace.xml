@@ -2,7 +2,109 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12625dea-43f9-414d-b4e9-ca863bea3fcb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/MarioInterface/Constraints.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/MarioInterface/GamePlay.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/MarioInterface/LevelGenerator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/MarioInterface/LevelInterface.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/Art.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/BgRenderer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/ConstraintsChecker.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/DataRecorder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/LevelFactory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/LevelRenderer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/MarioComponent.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/Play.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/PlayCustomized.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/PlaySaved.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/Scale2x.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sonar/FakeSoundEngine.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sonar/FixedSoundSource.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sonar/SonarSoundEngine.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sonar/SoundListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sonar/SoundProducer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sonar/SoundSource.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sonar/StereoSoundProducer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sonar/mixer/ListenerMixer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sonar/mixer/Sound.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sonar/sample/SampleLoader.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sonar/sample/SamplePlayer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sonar/sample/SonarSample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sprites/BulletBill.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sprites/CoinAnim.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sprites/Enemy.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sprites/FireFlower.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sprites/Fireball.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sprites/FlowerEnemy.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sprites/Mario.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sprites/Mushroom.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sprites/Particle.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sprites/Shell.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sprites/Sparkle.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sprites/Sprite.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sprites/SpriteContext.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/sprites/SpriteTemplate.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/util/FileHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/util/UIItem.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/engine/util/UITextArea.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/level/BgLevelGenerator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/level/CustomizedLevel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/level/Level.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/level/MyLevel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/level/RandomLevel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/level/generator/CustomizedLevelGenerator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/level/generator/DeterministicLevelGenerator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/level/generator/MyLevelGenerator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/ResourcesManager.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/abkey.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/bgsheet.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/endscene.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/enemysheet.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/firemariosheet.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/font.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/gameovergost.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/itemsheet.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/keys.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/logo.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/mapsheet.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/mariosheet.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/mus/smb3map1.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/mus/smb3ovr1.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/mus/smb3undr.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/mus/smwfortress.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/mus/smwovr1.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/mus/smwovr2.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/mus/smwtitle.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/particlesheet.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/racoonmariosheet.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/smallmariosheet.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/snd/1-up.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/snd/breakblock.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/snd/bump.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/snd/cannon.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/snd/coin.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/snd/death.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/snd/exit.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/snd/fireball.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/snd/jump.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/snd/kick.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/snd/message.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/snd/pipe.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/snd/powerdown.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/snd/powerup.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/snd/sprout.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/snd/stagestart.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/snd/stomp.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/test.lvl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/tiles.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/title.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/tweak.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/res/res/worldmap.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/scene/LevelScene.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/scene/LevelSceneTest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/scene/LoseScene.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/scene/Scene.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dk/itu/mario/scene/WinScene.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -70,11 +172,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5" vertical-offset="0" max-vertical-offset="300">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="733">
+              <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -83,10 +185,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32520324" vertical-offset="0" max-vertical-offset="738">
+            <state vertical-scroll-proportion="-9.6" vertical-offset="0" max-vertical-offset="330">
               <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
@@ -150,8 +252,8 @@
         <option value="$PROJECT_DIR$/src/dk/itu/mario/engine/MarioComponent.java" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/level/MyLevel.java" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/level/generator/MyLevelGenerator.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -603,12 +705,12 @@
       <updated>1437340991233</updated>
       <workItem from="1437340992415" duration="13317000" />
       <workItem from="1437492722958" duration="1030000" />
-      <workItem from="1437494896567" duration="104000" />
+      <workItem from="1437494896567" duration="347000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14451000" />
+    <option name="totallyTimeSpent" value="14694000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -947,23 +1049,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.6" vertical-offset="0" max-vertical-offset="330">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5" vertical-offset="0" max-vertical-offset="300">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="733">
+          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
           <folding />
         </state>
       </provider>
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32520324" vertical-offset="0" max-vertical-offset="738">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
       </provider>
     </entry>
   </component>
