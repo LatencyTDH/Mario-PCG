@@ -12,10 +12,14 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
     static double current_fun = 0;
     static int fieldType = LevelInterface.TYPE_CASTLE;
 
+    private double temperature = 10000.0;
+    private double coolingRate = 0.9;
+    public static final double ABSOLUTE_TEMPERATURE = .00001;
+
     public LevelInterface generateLevel(GamePlay playerMetrics) {
         this.playerMetrics = playerMetrics;
         fieldType = new Random().nextInt(3);
-        return optimize(1.0, 10000, 0.9);
+        return optimize(temperature, coolingRate);
     }
 
     @Override
@@ -26,11 +30,11 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
 
 
     // method to optimize using simulated annealing
-    public static MyLevel optimize(double startingTemperature, int numberOfIterations, double coolingRate) {
+    public static MyLevel optimize(double startingTemperature, double coolingRate) {
         double t = startingTemperature;
         MyLevel currentSolution = new MyLevel(320, 15, new Random().nextLong(), 7, fieldType, playerMetrics, 0.2, 0.2, 0.2, 0.2, 0.2);
         //mutate current solution and test fitness
-        for (int i = 0; i < numberOfIterations; i++) {
+        while (t > ABSOLUTE_TEMPERATURE) {
             double fitness = evaluate(currentSolution);
             MyLevel newSolution = mutate(currentSolution);
             double newFitness = evaluate(newSolution);
