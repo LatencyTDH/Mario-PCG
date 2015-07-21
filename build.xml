@@ -38,11 +38,22 @@
   </target>
 
   <target name="play-default" depends="compile"
-        description="tests Mario whether it works" >
+                   description="tests Mario whether it works" >
+  <!-- Create the distribution directory -->
+  <java classname="dk.itu.mario.engine.Play" failonerror="false" fork="true">
+    <classpath>
+      <pathelement location="${build}" />
+    </classpath>
+  </java>
+</target>
+
+  <!-- Plays the map saved in the map1.txt file -->
+  <target name="play-saved" depends="compile"
+          description="tests Mario whether it works" >
     <!-- Create the distribution directory -->
-    <java classname="dk.itu.mario.engine.Play" failonerror="false" fork="true">
+    <java classname="dk.itu.mario.engine.PlaySaved" failonerror="false" fork="true">
       <classpath>
-           <pathelement location="${build}" />
+        <pathelement location="${build}" />
       </classpath>
     </java>
   </target>

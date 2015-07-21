@@ -47,6 +47,7 @@ public class MarioComponent extends JComponent implements Runnable, KeyListener,
 		    private boolean focused = false;
 		    private boolean useScale2x = false;
 		    private boolean isCustom = false;
+			private boolean isSaved = false;
 
 
 		    private Scale2x scale2x = new Scale2x(320, 240);
@@ -92,6 +93,10 @@ public class MarioComponent extends JComponent implements Runnable, KeyListener,
 
 		        openTime = System.nanoTime();
 		    }
+
+			public void setSaved(boolean isSaved) {
+				this.isSaved = isSaved;
+			}
 
 		    private void toggleKey(int keyCode, boolean isPressed)
 		    {
@@ -183,10 +188,13 @@ public class MarioComponent extends JComponent implements Runnable, KeyListener,
 		        float averagePassedTime = 0;
 
 		        boolean naiveTiming = true;
-		        if (isCustom)
-		        	toCustomGame(txtFileToUse);
-		        else
-		        toRandomGame();
+		        if (isCustom) {
+
+					toCustomGame(txtFileToUse, isSaved);
+				}
+		        else {
+					toRandomGame();
+				}
 
 		        float correction = 0f;
 		        if(System.getProperty("os.name") == "Mac OS X");
@@ -342,9 +350,13 @@ public class MarioComponent extends JComponent implements Runnable, KeyListener,
 
 		    }
 
-		    public void toCustomGame(String txtFileToUse){
+		    public void toCustomGame(String txtFileToUse, boolean isSaved){
 
-		    	randomLevel = new LevelSceneTest(graphicsConfiguration,this,new Random().nextLong(),0,0,true, txtFileToUse);
+				if (isSaved) {
+					randomLevel = new LevelSceneTest(graphicsConfiguration,this,new Random().nextLong(),0,0,true, true);
+				} else {
+					randomLevel = new LevelSceneTest(graphicsConfiguration, this, new Random().nextLong(), 0, 0, true, txtFileToUse);
+				}
 
 		    	Mario.fire = false;
 		    	Mario.large = false;
@@ -365,7 +377,7 @@ public class MarioComponent extends JComponent implements Runnable, KeyListener,
 				System.out.println("............................");
 				System.out.println("Starting new custom level...");
 				System.out.println("............................");
-				toCustomGame(txtFileToUse);
+				toCustomGame(txtFileToUse, isSaved);
 		    }
 
 		    public void win(){
@@ -375,7 +387,7 @@ public class MarioComponent extends JComponent implements Runnable, KeyListener,
 				System.out.println("............................");
 				System.out.println("Starting new custom level...");
 				System.out.println("............................");
-				toCustomGame(txtFileToUse);
+				toCustomGame(txtFileToUse, isSaved);
 		    }
 
 
