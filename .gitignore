@@ -13,4 +13,4 @@ hs_err_pid*
 
 # some logging files
 map.txt
-scores.txt
+ratings.txt
