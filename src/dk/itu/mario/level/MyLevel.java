@@ -98,9 +98,10 @@ public class MyLevel extends RandomLevel {
                 length += this.buildTubes(length, width - length);
                 continue;
             }
-            buildProb -= this.probBuildTubes;
 
-            length += this.buildCannons(length, width - length);
+                buildProb -= this.probBuildTubes;
+                length += this.buildCannons(length, width - length);
+
         }
 
         //set the end piece
@@ -309,17 +310,16 @@ public class MyLevel extends RandomLevel {
                 type = random.nextInt(VERY_HARD_ENEMY_TYPES);
             }
 
-            if(x == end - 1 && pitEnemies == 0)
-            {
-                int pos = random.nextInt(end - start);
-                setSpriteTemplate(start + pos, y, new SpriteTemplate(type, random.nextInt(35) < difficulty));
-                ENEMIES++;
-            }
-            else if(random.nextDouble() < (1.0 / (pitEnemies + 4)))
-            {
-                setSpriteTemplate(x, y, new SpriteTemplate(type, random.nextInt(35) < difficulty));
-                ENEMIES++;
-                pitEnemies++;
+            if (difficulty >= 3 || random.nextDouble() < 0.1) {
+                if (x == end - 1 && pitEnemies == 0) {
+                    int pos = random.nextInt(end - start);
+                    setSpriteTemplate(start + pos, y, new SpriteTemplate(type, random.nextInt(35) < difficulty));
+                    ENEMIES++;
+                } else if (random.nextDouble() < (1.0 / (pitEnemies + 4))) {
+                    setSpriteTemplate(x, y, new SpriteTemplate(type, random.nextInt(35) < difficulty));
+                    ENEMIES++;
+                    pitEnemies++;
+                }
             }
         }
     }
@@ -394,6 +394,23 @@ public class MyLevel extends RandomLevel {
         }
 
         return length;
+    }
+
+    private void addEnemyLine(int x0, int x1, int y) {
+        for (int x = x0; x < x1; x++) {
+            if (random.nextInt(35) < difficulty + 1) {
+                int type = random.nextInt(4);
+
+                if (difficulty < 1) {
+                    type = Enemy.ENEMY_GOOMBA;
+                } else if (difficulty < 3) {
+                    type = random.nextInt(VERY_HARD_ENEMY_TYPES);
+                }
+
+                ENEMIES++;
+                setSpriteTemplate(x, y, new SpriteTemplate(type, random.nextInt(35) < difficulty));
+            }
+        }
     }
 
     private void decorate(int xStart, int xLength, int floor) {

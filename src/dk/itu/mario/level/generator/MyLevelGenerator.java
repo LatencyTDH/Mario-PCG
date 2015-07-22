@@ -12,11 +12,12 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
     static double current_fun = 0;
     static int fieldType = LevelInterface.TYPE_CASTLE;
 
-    public static int SEED = 42;
+    public static int SEED = 43;
 
     private double temperature = 100000.0;
     private double coolingRate = 0.9;
     private static Random generator = new Random(SEED);
+    public static final int DIFFICULTY_LEVELS = 5; //Don't change this
     public static final double ABSOLUTE_TEMPERATURE = .00001;
 
     public LevelInterface generateLevel(GamePlay playerMetrics) {
@@ -87,7 +88,8 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
             change[i] = 0 + (0.2 - 0) * generator.nextDouble();
         }
 
-        double difficulty = Math.min(Math.max(old.difficulty + (10 * change[0] * signs[0]), 1), 4);
+        double difficulty = Math.abs((old.difficulty + signs[0]*1) % DIFFICULTY_LEVELS);
+        System.out.println(difficulty);
         double jump = Math.max(old.probBuildJump + (change[1] * signs[1]), 0);
         double cannons = Math.max(old.probBuildCannons + (change[2] * signs[2]), 0);
         double hills = Math.max(old.probBuildHillStraight + (change[3] * signs[3]), 0);
@@ -104,14 +106,15 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
 
         double fun =
 
-                2 * playerMetrics.emptyBlocksDestroyed +
+                0.2 * playerMetrics.emptyBlocksDestroyed +
                         0.6 * playerMetrics.enemyKillByKickingShell +
                         -0.3 * playerMetrics.totalTimeFireMode +
                         -2 * playerMetrics.percentageBlocksDestroyed +
                         0.1 * playerMetrics.totalEmptyBlocks +
                         0.3 * playerMetrics.totalCoinBlocks +
                         -0.1 * playerMetrics.totalCoins +
-                        -0.2 * solution.difficulty +
+                        -500 * solution.probBuildCannons +
+                        0 * solution.difficulty +
                         5;
         current_fun = fun;
         return fun;
