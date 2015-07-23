@@ -9,8 +9,8 @@ public class SpriteTemplate
 	public static final int GOOMPA			= 2;
 	public static final int ARMORED_TURTLE	= 3;
 	public static final int JUMP_FLOWER		= 4;
-	public static final int CANNON_BALL		= 5;
-	public static final int CHOMP_FLOWER	= 6;
+	public static final int CHOMP_FLOWER	= 5;
+    public static final int CANNON_BALL		= 6;
 
 	public static int enemiesSpawned = 0;
 	public static int enemiesMax = 1000;

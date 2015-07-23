@@ -20,7 +20,7 @@ public class MyLevel extends RandomLevel {
     //Custom values
     public int EASY_ENEMY_TYPES = 1;
     public int MEDIUM_ENEMY_TYPES = 3;
-    public int HARD_ENEMY_TYPES = 5;
+    public int HARD_ENEMY_TYPES = 6;
     public int VERY_HARD_ENEMY_TYPES = 7; //number of different enemies encountered by Mario
     public int gaps = 0;
     public byte[][] map = getMap();
