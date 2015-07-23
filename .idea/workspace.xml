@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12625dea-43f9-414d-b4e9-ca863bea3fcb" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DetailedInfo.txt" afterPath="$PROJECT_DIR$/DetailedInfo.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/MyLevel.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/MyLevel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/generator/MyLevelGenerator.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/generator/MyLevelGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/player.txt" afterPath="$PROJECT_DIR$/player.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ratings.txt" afterPath="$PROJECT_DIR$/ratings.txt" />
     </list>
     <ignored path="Mario-AI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MyLevel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyLevel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/MyLevel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="10.555555" vertical-offset="810" max-vertical-offset="9390">
-              <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.55306125" vertical-offset="1109" max-vertical-offset="9420">
+              <caret line="101" column="61" selection-start-line="101" selection-start-column="61" selection-end-line="101" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -71,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyLevelGenerator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyLevelGenerator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/generator/MyLevelGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23469388" vertical-offset="1400" max-vertical-offset="2025">
-              <caret line="106" column="16" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1325" max-vertical-offset="2040">
+              <caret line="116" column="16" selection-start-line="116" selection-start-column="16" selection-end-line="116" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -250,10 +254,10 @@
         <option value="$PROJECT_DIR$/src/dk/itu/mario/level/Level.java" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/engine/sprites/SpriteTemplate.java" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/dk/itu/mario/level/MyLevel.java" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/engine/DataRecorder.java" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/scene/LevelScene.java" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/level/generator/MyLevelGenerator.java" />
+        <option value="$PROJECT_DIR$/src/dk/itu/mario/level/MyLevel.java" />
       </list>
     </option>
   </component>
@@ -840,12 +844,12 @@
       <workItem from="1437492722958" duration="1030000" />
       <workItem from="1437494896567" duration="9389000" />
       <workItem from="1437520220782" duration="161000" />
-      <workItem from="1437521667643" duration="8033000" />
+      <workItem from="1437521667643" duration="9216000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31930000" />
+    <option name="totallyTimeSpent" value="33113000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1311,30 +1315,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/MarioInterface/LevelGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/MarioInterface/LevelInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/MyLevel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.555555" vertical-offset="810" max-vertical-offset="9390">
-          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/scene/LevelSceneTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.259259" vertical-offset="521" max-vertical-offset="3465">
@@ -1447,10 +1427,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/MarioInterface/LevelGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/MarioInterface/LevelInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/generator/MyLevelGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23469388" vertical-offset="1400" max-vertical-offset="2025">
-          <caret line="106" column="16" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1325" max-vertical-offset="2040">
+          <caret line="116" column="16" selection-start-line="116" selection-start-column="16" selection-end-line="116" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/MyLevel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55306125" vertical-offset="1109" max-vertical-offset="9420">
+          <caret line="101" column="61" selection-start-line="101" selection-start-column="61" selection-end-line="101" selection-end-column="61" />
           <folding />
         </state>
       </provider>

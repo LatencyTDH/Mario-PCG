@@ -99,9 +99,11 @@ public class MyLevel extends RandomLevel {
                 continue;
             }
 
+            //Only build cannons at Medium difficulty levels.
+            if (difficulty >= 2) {
                 buildProb -= this.probBuildTubes;
                 length += this.buildCannons(length, width - length);
-
+            }
         }
 
         //set the end piece
@@ -310,7 +312,7 @@ public class MyLevel extends RandomLevel {
                 type = random.nextInt(VERY_HARD_ENEMY_TYPES);
             }
 
-            if (difficulty >= 3 || random.nextDouble() < 0.1) {
+            if (difficulty >= 3 || (difficulty < 3 && random.nextDouble() < .1 * difficulty)) {
                 if (x == end - 1 && pitEnemies == 0) {
                     int pos = random.nextInt(end - start);
                     setSpriteTemplate(start + pos, y, new SpriteTemplate(type, random.nextInt(35) < difficulty));

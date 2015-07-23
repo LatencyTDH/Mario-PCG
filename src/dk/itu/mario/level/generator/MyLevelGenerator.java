@@ -12,7 +12,7 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
     static double current_fun = 0;
     static int fieldType = LevelInterface.TYPE_CASTLE;
 
-    public static int SEED = 42;
+    public static int SEED = 46;
 
     private double temperature = 100000.0;
     private double coolingRate = 0.9;
@@ -114,6 +114,7 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
                 1 * solution.BLOCKS_EMPTY +
                 1 * solution.BLOCKS_POWER +
                 1 * solution.ENEMIES;
+        fun = 0;
         current_fun = fun;
         return fun;
     }
