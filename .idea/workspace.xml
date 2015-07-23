@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12625dea-43f9-414d-b4e9-ca863bea3fcb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/generator/CustomizedLevelGenerator.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/generator/CustomizedLevelGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/engine/DataRecorder.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/engine/DataRecorder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DetailedInfo.txt" afterPath="$PROJECT_DIR$/DetailedInfo.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/generator/DeterministicLevelGenerator.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/generator/DeterministicLevelGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/scene/LevelScene.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/scene/LevelScene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/MyLevel.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/MyLevel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/generator/MyLevelGenerator.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/generator/MyLevelGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/player.txt" afterPath="$PROJECT_DIR$/player.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ratings.txt" afterPath="$PROJECT_DIR$/ratings.txt" />
     </list>
     <ignored path="Mario-AI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,21 +71,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyLevelGenerator.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyLevelGenerator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/generator/MyLevelGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1400" max-vertical-offset="2025">
-              <caret line="114" column="19" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.23469388" vertical-offset="1400" max-vertical-offset="2025">
+              <caret line="106" column="16" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataRecorder.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DataRecorder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/engine/DataRecorder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7673469" vertical-offset="12599" max-vertical-offset="17835">
-              <caret line="865" column="24" selection-start-line="855" selection-start-column="16" selection-end-line="865" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="17835">
+              <caret line="854" column="33" selection-start-line="854" selection-start-column="33" selection-end-line="854" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2527#2528#0" expanded="true" />
@@ -260,9 +251,9 @@
         <option value="$PROJECT_DIR$/src/dk/itu/mario/engine/sprites/SpriteTemplate.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/level/MyLevel.java" />
-        <option value="$PROJECT_DIR$/src/dk/itu/mario/level/generator/MyLevelGenerator.java" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/engine/DataRecorder.java" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/scene/LevelScene.java" />
+        <option value="$PROJECT_DIR$/src/dk/itu/mario/level/generator/MyLevelGenerator.java" />
       </list>
     </option>
   </component>
@@ -849,12 +840,12 @@
       <workItem from="1437492722958" duration="1030000" />
       <workItem from="1437494896567" duration="9389000" />
       <workItem from="1437520220782" duration="161000" />
-      <workItem from="1437521667643" duration="7936000" />
+      <workItem from="1437521667643" duration="8033000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31833000" />
+    <option name="totallyTimeSpent" value="31930000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1360,18 +1351,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/generator/MyLevelGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1340" max-vertical-offset="2025">
-          <caret line="114" column="19" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/engine/DataRecorder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7673469" vertical-offset="12599" max-vertical-offset="17835">
-          <caret line="865" column="24" selection-start-line="855" selection-start-column="16" selection-end-line="865" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="17835">
+          <caret line="854" column="33" selection-start-line="854" selection-start-column="33" selection-end-line="854" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2527#2528#0" expanded="true" />
@@ -1461,6 +1444,14 @@
             <element signature="e#32959#32960#0" expanded="true" />
             <element signature="e#32994#32995#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/generator/MyLevelGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23469388" vertical-offset="1400" max-vertical-offset="2025">
+          <caret line="106" column="16" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>

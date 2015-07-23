@@ -104,15 +104,15 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
     public static double evaluate(MyLevel solution) {
 
         double fun =
-                0.1 * solution.probBuildJump +
-                0.1 * solution.probBuildCannons +
-                0.1 * solution.probBuildHillStraight +
-                0.1 * solution.probBuildTubes +
-                0.1 * solution.probBuildStraight +
+                1 * solution.probBuildJump +
+                1 * solution.probBuildCannons +
+                1 * solution.probBuildHillStraight +
+                1 * solution.probBuildTubes +
+                1 * solution.probBuildStraight +
                 1 * solution.difficulty +
                 1 * solution.BLOCKS_COINS +
                 1 * solution.BLOCKS_EMPTY +
-                100 * solution.BLOCKS_POWER +
+                1 * solution.BLOCKS_POWER +
                 1 * solution.ENEMIES;
         current_fun = fun;
         return fun;
