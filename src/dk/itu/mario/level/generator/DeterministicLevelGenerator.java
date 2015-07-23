@@ -25,8 +25,8 @@ public class DeterministicLevelGenerator extends CustomizedLevelGenerator {
 
     private MyLevel readLevel(String filename) {
         MyLevel level = null;
-        try(ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(filename)))) {
-            level =  (MyLevel) ois.readObject();
+        try (ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(filename)))) {
+            level = (MyLevel) ois.readObject();
         } catch (Exception e) {
             System.out.println("Can't load map file!");
         }

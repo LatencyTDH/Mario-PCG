@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12625dea-43f9-414d-b4e9-ca863bea3fcb" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/generator/CustomizedLevelGenerator.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/generator/CustomizedLevelGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/engine/DataRecorder.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/engine/DataRecorder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DetailedInfo.txt" afterPath="$PROJECT_DIR$/DetailedInfo.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/generator/DeterministicLevelGenerator.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/generator/DeterministicLevelGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/scene/LevelScene.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/scene/LevelScene.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/MyLevel.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/MyLevel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/level/generator/MyLevelGenerator.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/level/generator/MyLevelGenerator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dk/itu/mario/engine/sprites/SpriteTemplate.java" afterPath="$PROJECT_DIR$/src/dk/itu/mario/engine/sprites/SpriteTemplate.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/player.txt" afterPath="$PROJECT_DIR$/player.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ratings.txt" afterPath="$PROJECT_DIR$/ratings.txt" />
     </list>
@@ -37,8 +40,8 @@
       <file leaf-file-name="MyLevel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/MyLevel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="27.296297" vertical-offset="1127" max-vertical-offset="9390">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state vertical-scroll-proportion="10.555555" vertical-offset="810" max-vertical-offset="9390">
+              <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -64,24 +67,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2173913" vertical-offset="35" max-vertical-offset="495">
-              <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.0" vertical-offset="0" max-vertical-offset="330">
-              <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+            <state vertical-scroll-proportion="-7.8333335" vertical-offset="35" max-vertical-offset="495">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -90,9 +83,107 @@
       <file leaf-file-name="MyLevelGenerator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/generator/MyLevelGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1935">
-              <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1400" max-vertical-offset="2025">
+              <caret line="114" column="19" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="19" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataRecorder.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/engine/DataRecorder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7673469" vertical-offset="12599" max-vertical-offset="17835">
+              <caret line="865" column="24" selection-start-line="855" selection-start-column="16" selection-end-line="865" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2527#2528#0" expanded="true" />
+                <element signature="e#2561#2562#0" expanded="true" />
+                <element signature="e#4379#4380#0" expanded="true" />
+                <element signature="e#4407#4408#0" expanded="true" />
+                <element signature="e#4437#4438#0" expanded="true" />
+                <element signature="e#4468#4469#0" expanded="true" />
+                <element signature="e#4504#4505#0" expanded="true" />
+                <element signature="e#4535#4536#0" expanded="true" />
+                <element signature="e#16321#16322#0" expanded="true" />
+                <element signature="e#16382#16383#0" expanded="true" />
+                <element signature="e#27678#27679#0" expanded="true" />
+                <element signature="e#27728#27729#0" expanded="true" />
+                <element signature="e#27761#27762#0" expanded="true" />
+                <element signature="e#27806#27807#0" expanded="true" />
+                <element signature="e#27843#27844#0" expanded="true" />
+                <element signature="e#27892#27893#0" expanded="true" />
+                <element signature="e#27927#27928#0" expanded="true" />
+                <element signature="e#27961#27962#0" expanded="true" />
+                <element signature="e#27998#27999#0" expanded="true" />
+                <element signature="e#28047#28048#0" expanded="true" />
+                <element signature="e#28082#28083#0" expanded="true" />
+                <element signature="e#28116#28117#0" expanded="true" />
+                <element signature="e#28152#28153#0" expanded="true" />
+                <element signature="e#28200#28201#0" expanded="true" />
+                <element signature="e#28232#28233#0" expanded="true" />
+                <element signature="e#28263#28264#0" expanded="true" />
+                <element signature="e#28301#28302#0" expanded="true" />
+                <element signature="e#28351#28352#0" expanded="true" />
+                <element signature="e#28388#28389#0" expanded="true" />
+                <element signature="e#28437#28438#0" expanded="true" />
+                <element signature="e#28475#28476#0" expanded="true" />
+                <element signature="e#28512#28513#0" expanded="true" />
+                <element signature="e#28556#28557#0" expanded="true" />
+                <element signature="e#28599#28600#0" expanded="true" />
+                <element signature="e#28642#28643#0" expanded="true" />
+                <element signature="e#28684#28685#0" expanded="true" />
+                <element signature="e#28728#28729#0" expanded="true" />
+                <element signature="e#28771#28772#0" expanded="true" />
+                <element signature="e#28811#28812#0" expanded="true" />
+                <element signature="e#28848#28849#0" expanded="true" />
+                <element signature="e#28887#28888#0" expanded="true" />
+                <element signature="e#28923#28924#0" expanded="true" />
+                <element signature="e#28962#28963#0" expanded="true" />
+                <element signature="e#29000#29001#0" expanded="true" />
+                <element signature="e#29034#29035#0" expanded="true" />
+                <element signature="e#29067#29068#0" expanded="true" />
+                <element signature="e#29100#29101#0" expanded="true" />
+                <element signature="e#29132#29133#0" expanded="true" />
+                <element signature="e#29166#29167#0" expanded="true" />
+                <element signature="e#29199#29200#0" expanded="true" />
+                <element signature="e#29235#29236#0" expanded="true" />
+                <element signature="e#29270#29271#0" expanded="true" />
+                <element signature="e#29309#29310#0" expanded="true" />
+                <element signature="e#29360#29361#0" expanded="true" />
+                <element signature="e#29398#29399#0" expanded="true" />
+                <element signature="e#29448#29449#0" expanded="true" />
+                <element signature="e#29485#29486#0" expanded="true" />
+                <element signature="e#29534#29535#0" expanded="true" />
+                <element signature="e#29571#29572#0" expanded="true" />
+                <element signature="e#29607#29608#0" expanded="true" />
+                <element signature="e#29720#29721#0" expanded="true" />
+                <element signature="e#29766#29767#0" expanded="true" />
+                <element signature="e#29792#29793#0" expanded="true" />
+                <element signature="e#29868#29869#0" expanded="true" />
+                <element signature="e#29958#29959#0" expanded="true" />
+                <element signature="e#30035#30036#0" expanded="true" />
+                <element signature="e#30130#30131#0" expanded="true" />
+                <element signature="e#30208#30209#0" expanded="true" />
+                <element signature="e#30309#30310#0" expanded="true" />
+                <element signature="e#30384#30385#0" expanded="true" />
+                <element signature="e#30482#30483#0" expanded="true" />
+                <element signature="e#30566#30567#0" expanded="true" />
+                <element signature="e#30667#30668#0" expanded="true" />
+                <element signature="e#30743#30744#0" expanded="true" />
+                <element signature="e#30769#30770#0" expanded="true" />
+                <element signature="e#30846#30847#0" expanded="true" />
+                <element signature="e#31294#31295#0" expanded="true" />
+                <element signature="e#31336#31337#0" expanded="true" />
+                <element signature="e#31362#31363#0" expanded="true" />
+                <element signature="e#31450#31451#0" expanded="true" />
+                <element signature="e#31782#31783#0" expanded="true" />
+                <element signature="e#31823#31824#0" expanded="true" />
+                <element signature="e#31849#31850#0" expanded="true" />
+                <element signature="e#31888#31889#0" expanded="true" />
+                <element signature="e#32959#32960#0" expanded="true" />
+                <element signature="e#32994#32995#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,8 +211,18 @@
       <file leaf-file-name="LevelSceneTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/scene/LevelSceneTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="3465">
-              <caret line="47" column="100" selection-start-line="47" selection-start-column="100" selection-end-line="47" selection-end-column="100" />
+            <state vertical-scroll-proportion="-6.259259" vertical-offset="521" max-vertical-offset="3465">
+              <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LevelScene.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/scene/LevelScene.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="8204" max-vertical-offset="10170">
+              <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -142,7 +243,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/dk/itu/mario/engine/DataRecorder.java" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/scene/LoseScene.java" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/level/CustomizedLevel.java" />
         <option value="$PROJECT_DIR$/build.xml" />
@@ -157,10 +257,12 @@
         <option value="$PROJECT_DIR$/src/dk/itu/mario/level/generator/DeterministicLevelGenerator.java" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/scene/LevelSceneTest.java" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/level/Level.java" />
-        <option value="$PROJECT_DIR$/src/dk/itu/mario/level/generator/MyLevelGenerator.java" />
         <option value="$PROJECT_DIR$/src/dk/itu/mario/engine/sprites/SpriteTemplate.java" />
-        <option value="$PROJECT_DIR$/src/dk/itu/mario/level/MyLevel.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/dk/itu/mario/level/MyLevel.java" />
+        <option value="$PROJECT_DIR$/src/dk/itu/mario/level/generator/MyLevelGenerator.java" />
+        <option value="$PROJECT_DIR$/src/dk/itu/mario/engine/DataRecorder.java" />
+        <option value="$PROJECT_DIR$/src/dk/itu/mario/scene/LevelScene.java" />
       </list>
     </option>
   </component>
@@ -409,6 +511,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="false" />
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$" />
+    <property name="LayoutCode.rearrangeEntriesJava" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
@@ -746,12 +849,12 @@
       <workItem from="1437492722958" duration="1030000" />
       <workItem from="1437494896567" duration="9389000" />
       <workItem from="1437520220782" duration="161000" />
-      <workItem from="1437521667643" duration="5288000" />
+      <workItem from="1437521667643" duration="7936000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29185000" />
+    <option name="totallyTimeSpent" value="31833000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1089,17 +1192,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/engine/DataRecorder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="858" column="48" selection-start-line="858" selection-start-column="48" selection-end-line="858" selection-end-column="48" />
-          <folding>
-            <element signature="e#13862#13863#0" expanded="true" />
-            <element signature="e#13907#13908#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/generator/CustomizedLevelGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -1141,22 +1233,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="591">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/scene/LevelScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.497462" vertical-offset="9579" max-vertical-offset="10170">
-          <caret line="459" column="19" selection-start-line="459" selection-start-column="19" selection-end-line="459" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/scene/LevelSceneTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3465">
-          <caret line="47" column="100" selection-start-line="47" selection-start-column="100" selection-end-line="47" selection-end-column="100" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1217,14 +1293,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
-          <caret line="5" column="173" selection-start-line="5" selection-start-column="173" selection-end-line="5" selection-end-column="173" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/engine/sprites/SpriteTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
@@ -1233,10 +1301,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/generator/MyLevelGenerator.java">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1935">
-          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+        <state vertical-scroll-proportion="-7.8333335" vertical-offset="35" max-vertical-offset="495">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
+          <caret line="5" column="173" selection-start-line="5" selection-start-column="173" selection-end-line="5" selection-end-column="173" />
           <folding />
         </state>
       </provider>
@@ -1259,20 +1338,129 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/MyLevel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="27.296297" vertical-offset="1127" max-vertical-offset="9390">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state vertical-scroll-proportion="10.555555" vertical-offset="810" max-vertical-offset="9390">
+          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/scene/LevelSceneTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2173913" vertical-offset="35" max-vertical-offset="495">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+        <state vertical-scroll-proportion="-6.259259" vertical-offset="521" max-vertical-offset="3465">
+          <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/scene/LevelScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8204" max-vertical-offset="10170">
+          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/level/generator/MyLevelGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1340" max-vertical-offset="2025">
+          <caret line="114" column="19" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dk/itu/mario/engine/DataRecorder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7673469" vertical-offset="12599" max-vertical-offset="17835">
+          <caret line="865" column="24" selection-start-line="855" selection-start-column="16" selection-end-line="865" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2527#2528#0" expanded="true" />
+            <element signature="e#2561#2562#0" expanded="true" />
+            <element signature="e#4379#4380#0" expanded="true" />
+            <element signature="e#4407#4408#0" expanded="true" />
+            <element signature="e#4437#4438#0" expanded="true" />
+            <element signature="e#4468#4469#0" expanded="true" />
+            <element signature="e#4504#4505#0" expanded="true" />
+            <element signature="e#4535#4536#0" expanded="true" />
+            <element signature="e#16321#16322#0" expanded="true" />
+            <element signature="e#16382#16383#0" expanded="true" />
+            <element signature="e#27678#27679#0" expanded="true" />
+            <element signature="e#27728#27729#0" expanded="true" />
+            <element signature="e#27761#27762#0" expanded="true" />
+            <element signature="e#27806#27807#0" expanded="true" />
+            <element signature="e#27843#27844#0" expanded="true" />
+            <element signature="e#27892#27893#0" expanded="true" />
+            <element signature="e#27927#27928#0" expanded="true" />
+            <element signature="e#27961#27962#0" expanded="true" />
+            <element signature="e#27998#27999#0" expanded="true" />
+            <element signature="e#28047#28048#0" expanded="true" />
+            <element signature="e#28082#28083#0" expanded="true" />
+            <element signature="e#28116#28117#0" expanded="true" />
+            <element signature="e#28152#28153#0" expanded="true" />
+            <element signature="e#28200#28201#0" expanded="true" />
+            <element signature="e#28232#28233#0" expanded="true" />
+            <element signature="e#28263#28264#0" expanded="true" />
+            <element signature="e#28301#28302#0" expanded="true" />
+            <element signature="e#28351#28352#0" expanded="true" />
+            <element signature="e#28388#28389#0" expanded="true" />
+            <element signature="e#28437#28438#0" expanded="true" />
+            <element signature="e#28475#28476#0" expanded="true" />
+            <element signature="e#28512#28513#0" expanded="true" />
+            <element signature="e#28556#28557#0" expanded="true" />
+            <element signature="e#28599#28600#0" expanded="true" />
+            <element signature="e#28642#28643#0" expanded="true" />
+            <element signature="e#28684#28685#0" expanded="true" />
+            <element signature="e#28728#28729#0" expanded="true" />
+            <element signature="e#28771#28772#0" expanded="true" />
+            <element signature="e#28811#28812#0" expanded="true" />
+            <element signature="e#28848#28849#0" expanded="true" />
+            <element signature="e#28887#28888#0" expanded="true" />
+            <element signature="e#28923#28924#0" expanded="true" />
+            <element signature="e#28962#28963#0" expanded="true" />
+            <element signature="e#29000#29001#0" expanded="true" />
+            <element signature="e#29034#29035#0" expanded="true" />
+            <element signature="e#29067#29068#0" expanded="true" />
+            <element signature="e#29100#29101#0" expanded="true" />
+            <element signature="e#29132#29133#0" expanded="true" />
+            <element signature="e#29166#29167#0" expanded="true" />
+            <element signature="e#29199#29200#0" expanded="true" />
+            <element signature="e#29235#29236#0" expanded="true" />
+            <element signature="e#29270#29271#0" expanded="true" />
+            <element signature="e#29309#29310#0" expanded="true" />
+            <element signature="e#29360#29361#0" expanded="true" />
+            <element signature="e#29398#29399#0" expanded="true" />
+            <element signature="e#29448#29449#0" expanded="true" />
+            <element signature="e#29485#29486#0" expanded="true" />
+            <element signature="e#29534#29535#0" expanded="true" />
+            <element signature="e#29571#29572#0" expanded="true" />
+            <element signature="e#29607#29608#0" expanded="true" />
+            <element signature="e#29720#29721#0" expanded="true" />
+            <element signature="e#29766#29767#0" expanded="true" />
+            <element signature="e#29792#29793#0" expanded="true" />
+            <element signature="e#29868#29869#0" expanded="true" />
+            <element signature="e#29958#29959#0" expanded="true" />
+            <element signature="e#30035#30036#0" expanded="true" />
+            <element signature="e#30130#30131#0" expanded="true" />
+            <element signature="e#30208#30209#0" expanded="true" />
+            <element signature="e#30309#30310#0" expanded="true" />
+            <element signature="e#30384#30385#0" expanded="true" />
+            <element signature="e#30482#30483#0" expanded="true" />
+            <element signature="e#30566#30567#0" expanded="true" />
+            <element signature="e#30667#30668#0" expanded="true" />
+            <element signature="e#30743#30744#0" expanded="true" />
+            <element signature="e#30769#30770#0" expanded="true" />
+            <element signature="e#30846#30847#0" expanded="true" />
+            <element signature="e#31294#31295#0" expanded="true" />
+            <element signature="e#31336#31337#0" expanded="true" />
+            <element signature="e#31362#31363#0" expanded="true" />
+            <element signature="e#31450#31451#0" expanded="true" />
+            <element signature="e#31782#31783#0" expanded="true" />
+            <element signature="e#31823#31824#0" expanded="true" />
+            <element signature="e#31849#31850#0" expanded="true" />
+            <element signature="e#31888#31889#0" expanded="true" />
+            <element signature="e#32959#32960#0" expanded="true" />
+            <element signature="e#32994#32995#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

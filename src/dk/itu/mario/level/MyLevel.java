@@ -37,11 +37,11 @@ public class MyLevel extends RandomLevel {
     public int type;
 
     //initial probability values for parts
-    public double probBuildJump = 0.2;
-    public double probBuildStraight = 0.2;
-    public double probBuildHillStraight = 0.2;
-    public double probBuildTubes = 0.2;
-    public double probBuildCannons = 0.2;
+    public double probBuildJump;
+    public double probBuildStraight;
+    public double probBuildHillStraight;
+    public double probBuildTubes;
+    public double probBuildCannons;
 
     public MyLevel(int width, int height) {
         super(width, height);

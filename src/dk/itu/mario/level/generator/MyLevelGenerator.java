@@ -88,8 +88,7 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
             change[i] = 0 + (0.2 - 0) * generator.nextDouble();
         }
 
-        double difficulty = Math.abs((old.difficulty + signs[0]*1) % DIFFICULTY_LEVELS);
-        System.out.println(difficulty);
+        double difficulty = Math.abs((old.difficulty + signs[0]) % DIFFICULTY_LEVELS);
         double jump = Math.max(old.probBuildJump + (change[1] * signs[1]), 0);
         double cannons = Math.max(old.probBuildCannons + (change[2] * signs[2]), 0);
         double hills = Math.max(old.probBuildHillStraight + (change[3] * signs[3]), 0);
@@ -105,19 +104,26 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
     public static double evaluate(MyLevel solution) {
 
         double fun =
-
-                0.2 * playerMetrics.emptyBlocksDestroyed +
-                        0.6 * playerMetrics.enemyKillByKickingShell +
-                        -0.3 * playerMetrics.totalTimeFireMode +
-                        -2 * playerMetrics.percentageBlocksDestroyed +
-                        0.1 * playerMetrics.totalEmptyBlocks +
-                        0.3 * playerMetrics.totalCoinBlocks +
-                        -0.1 * playerMetrics.totalCoins +
-                        -500 * solution.probBuildCannons +
-                        0 * solution.difficulty +
-                        5;
+                0.1 * solution.probBuildJump +
+                0.1 * solution.probBuildCannons +
+                0.1 * solution.probBuildHillStraight +
+                0.1 * solution.probBuildTubes +
+                0.1 * solution.probBuildStraight +
+                1 * solution.difficulty +
+                1 * solution.BLOCKS_COINS +
+                1 * solution.BLOCKS_EMPTY +
+                100 * solution.BLOCKS_POWER +
+                1 * solution.ENEMIES;
         current_fun = fun;
         return fun;
+    }
+
+    public static double evaluate(MyLevel solution, boolean hasRegressionModel) {
+        if (!hasRegressionModel) {
+            return evaluate(solution);
+        }
+        //TODO: Accept nonlinear regression model from scikit-learn output.
+        return 0.0;
     }
 
     public static double getDifficulty() {
