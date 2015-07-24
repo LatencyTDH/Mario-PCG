@@ -859,6 +859,7 @@ public class DataRecorder {
                 "@attribute probBuildJump numeric\n" +
                 "@attribute probBuildCannons numeric\n" +
                 "@attribute probBuildHillStraight numeric\n" +
+                "@attribute probBuildTubes numeric\n" +
                 "@attribute probBuildStraight numeric\n" +
                 "@attribute difficulty numeric\n" +
                 "@attribute blocksCoins numeric\n" +

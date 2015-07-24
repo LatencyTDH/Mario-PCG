@@ -9,7 +9,7 @@ That is, the game is initialized with a randomly generated map, which is pieced 
 annealing algorithm is then used to find the optimal configuration of components based on a user-refined evaluation
 function.
 
-##How to Run the Project
+## How to Run the Project
 
 1.  Clone the repository https://github.gatech.edu/sdai30/Mario-AI.git.
 
@@ -17,7 +17,7 @@ function.
 
 3.  Type **ant play** into the command line to play a customized PCG level.
 
-##Commands
+## Commands
 **ant compile**: Compiles src/ directory files.
 
 **ant play**: Plays a custom level that uses procedural content generation.

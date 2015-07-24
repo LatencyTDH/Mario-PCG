@@ -3,6 +3,7 @@
 @attribute probBuildJump numeric
 @attribute probBuildCannons numeric
 @attribute probBuildHillStraight numeric
+@attribute probBuildTubes numeric
 @attribute probBuildStraight numeric
 @attribute difficulty numeric
 @attribute blocksCoins numeric
