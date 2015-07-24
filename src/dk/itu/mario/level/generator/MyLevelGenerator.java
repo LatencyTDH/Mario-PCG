@@ -12,7 +12,7 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
     static double current_fun = 0;
     static int fieldType = LevelInterface.TYPE_CASTLE;
 
-    public static int SEED = 46;
+    public static long SEED = System.currentTimeMillis();
 
     private double temperature = 100000.0;
     private double coolingRate = 0.9;

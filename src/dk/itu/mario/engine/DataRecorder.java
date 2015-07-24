@@ -815,8 +815,12 @@ public class DataRecorder {
         System.out.println(detailedLog);
         write(detailedLog);
 
+        String filename = "ratings.txt";
         double mapRating = enterRating();
-        append("ratings.txt", getFeatureVector(mapRating));
+        if (!new File(filename).exists()) {
+            createFileWithHeader(filename);
+        }
+        append(filename, getFeatureVector(mapRating));
 
     }
 
@@ -848,6 +852,27 @@ public class DataRecorder {
             }
         }
         return rate;
+    }
+
+    private void createFileWithHeader(String filename) {
+        String header = "@relation user-funness-rating\n\n" +
+                "@attribute probBuildJump numeric\n" +
+                "@attribute probBuildCannons numeric\n" +
+                "@attribute probBuildHillStraight numeric\n" +
+                "@attribute probBuildStraight numeric\n" +
+                "@attribute difficulty numeric\n" +
+                "@attribute blocksCoins numeric\n" +
+                "@attribute blocksEmpty numeric\n" +
+                "@attribute blocksPower numeric\n" +
+                "@attribute enemies numeric\n" +
+                "@attribute fun numeric\n\n" +
+                "@data";
+
+        try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(filename)))) {
+            out.println(header);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private String getFeatureVector(double rating) {
