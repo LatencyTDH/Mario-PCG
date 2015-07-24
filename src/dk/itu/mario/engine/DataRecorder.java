@@ -815,7 +815,7 @@ public class DataRecorder {
         System.out.println(detailedLog);
         write(detailedLog);
 
-        String filename = "ratings.txt";
+        String filename = "ratings.arff";
         double mapRating = enterRating();
         if (!new File(filename).exists()) {
             createFileWithHeader(filename);

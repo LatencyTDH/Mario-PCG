@@ -25,7 +25,7 @@ def train_SVR_model(X,y):
     Returns the CV-fitted SVM model according to the given training data.
     """
     clf = GridSearchCV(SVR(kernel='rbf', gamma=0.1), cv=5,
-                   param_grid={"C": [1e0, 1e1, 1e2, 1e3],
+                   param_grid={"C": np.logspace(-4,4,9),
                                "gamma": np.logspace(-2, 2, 5)})
     clf.fit(X,y)
     return clf
@@ -50,16 +50,26 @@ def count_datalines(filename):
     data_idx = text.index("@data")
     return text[data_idx:].count('\n') - 1
 
+def build_model(filename, toSave=False):
+    X,y = load_dataset(filename)
+    clf = train_SVR_model(X,y)
+    if toSave:
+        save_model(clf)
+    return clf
+
 def main():
     clf = None
-    test_predict = [0.000000,0.000000,0.410799,0.426060,0.163142,3,3,15,2,70]
+    filename = "ratings.arff"
+    test_predict = [0.705555,0.021981,0.046962,0.196528,0.028975,0,0,0,0,1]
 
     if os.path.isfile('svr_model.pkl'):
-        clf = load_model()
+        # Occasionally rebuild SVR regression model with new training data
+        if (count_datalines(filename) % 10 == 0):
+            clf = build_model(filename, True)
+        else:
+            clf = load_model()
     else:
-        X,y = load_dataset("myratings.arff")
-        clf = train_SVR_model(X,y)
-        save_model(clf)
+        clf = build_model(filename, True)
 
     if sys.argv > 1:
         print sys.argv
@@ -67,13 +77,8 @@ def main():
     print clf.predict(test_predict)
 
 if __name__ == "__main__":
-    # main()
-    print count_datalines('myratings.arff')
-    print count_datalines('ratings.txt')
+    main()
+    # print count_datalines('myratings.arff')
+    # print count_datalines('ratings.txt')
     # X,y = load_dataset("myratings.arff")
     # clf = train_linear_model(X,y)
-    # print clf.predict([1.000000,0.000000,0.410799,0.426060,0.163142,3,3,15,2,2])
-
-# X,y = load_dataset("myratings.arff")
-# clf = train_SVR_model(X,y)
-# cPickle.dump(clf, open('svr_model.pkl','wb'))
