@@ -1,0 +1,24 @@
+@relation user-funness-rating
+
+@attribute probBuildJump numeric
+@attribute probBuildCannons numeric
+@attribute probBuildHillStraight numeric
+@attribute probBuildTubes numeric
+@attribute probBuildStraight numeric
+@attribute difficulty numeric
+@attribute blocksCoins numeric
+@attribute blocksEmpty numeric
+@attribute blocksPower numeric
+@attribute enemies numeric
+@attribute fun numeric
+
+@data
+0.242932,0.047083,0.000000,0.219256,0.490730,1,6,22,8,2,1.000000
+0.577060,0.000000,0.179896,0.162358,0.080686,1,1,4,1,2,2.000000
+0.577060,0.000000,0.179896,0.162358,0.080686,1,1,4,1,2,2.000000
+0.577060,0.000000,0.179896,0.162358,0.080686,1,1,4,1,2,2.000000
+0.577060,0.000000,0.179896,0.162358,0.080686,1,1,4,1,2,2.000000
+0.577060,0.000000,0.179896,0.162358,0.080686,1,1,4,1,2,2.000000
+0.577060,0.000000,0.179896,0.162358,0.080686,1,1,4,1,2,2.000000
+0.577060,0.000000,0.179896,0.162358,0.080686,1,1,4,1,2,2.000000
+0.577060,0.000000,0.179896,0.162358,0.080686,1,1,4,1,2,2.000000

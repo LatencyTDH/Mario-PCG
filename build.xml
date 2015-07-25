@@ -63,4 +63,13 @@
     <delete dir="${build}"/>
     <delete dir="${dist}"/>
   </target>
+  
+  <target name="clean-super"
+      description="clean and removes the user funness ratings (ratings.arff)" >
+      <delete dir="${build}"/>
+      <delete dir="${dist}"/>
+      <delete file="ratings.arff" failonerror="true"/>
+      <delete file="svr_model.pkl" failonerror="true"/>
+  </target>
+
 </project>

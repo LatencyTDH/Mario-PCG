@@ -14,7 +14,6 @@ import java.util.Random;
 
 public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelGenerator {
     static GamePlay playerMetrics;
-    static double current_fun = 0;
     static int fieldType = LevelInterface.TYPE_CASTLE;
 
     public static long SEED = System.currentTimeMillis();
@@ -24,6 +23,7 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
     private static Random generator = new Random(SEED);
     public static final int DIFFICULTY_LEVELS = 5; //Don't change this
     public static final double ABSOLUTE_TEMPERATURE = .00001;
+
     //minimum number of user funness ratings before we ask sklearn to build the regression model
     public static final int TRAINING_MINIMUM = 10;
     private FileWrapper ratingsFile = new FileWrapper("ratings.arff");
@@ -32,7 +32,7 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
         boolean predictWithPythonModel = false;
         if (ratingsFile.exists() && ratingsFile.countDataLines() >= TRAINING_MINIMUM) {
             System.out.println("Rebuilding SV-regression model on new training data...");
-            rebuildPythonModel();
+            rebuildPythonModel(ratingsFile.getFilename());
             System.out.println("Done!");
             predictWithPythonModel = true;
         }
@@ -42,8 +42,8 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
         return level;
     }
 
-    private void rebuildPythonModel() {
-        executeFromCommandLine("python sv_regression.py --rebuild");
+    private void rebuildPythonModel(String filename) {
+        executeFromCommandLine("python sv_regression.py --rebuild --file " + filename);
     }
 
     private static ArrayList<String> executeFromCommandLine(String command) {
@@ -81,16 +81,14 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
             //change best solution to current solution if current solution is better
             if (newFitness > fitness) {
                 currentSolution = newSolution;
-                current_fun = newFitness;
-                System.out.println("Better: " + newFitness);
+                System.out.println("Better: " + currentSolution.fun);
             }
             //change to a worse solution with certain probabilty
             else {
                 Double randomValue = generator.nextDouble();
                 if (randomValue < acceptanceProbability(fitness, newFitness, t)) {
                     currentSolution = newSolution;
-                    current_fun = newFitness;
-                    System.out.println("Worse: " + newFitness);
+                    System.out.println("Worse: " + currentSolution.fun);
                 }
             }
             t = t * coolingRate;
@@ -106,7 +104,7 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
         System.out.println("probBuildHillStraight: " + solution.probBuildHillStraight);
         System.out.println("probBuildTubes: " + solution.probBuildTubes);
         System.out.println("probBuildStraight: " + solution.probBuildStraight);
-        System.out.println("fun: " + current_fun);
+        System.out.println("fun: " + solution.fun);
     }
 
     //method for calculating if a worse solution should be accepted
@@ -155,7 +153,7 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
 
         ArrayList<String> result = executeFromCommandLine("python sv_regression.py --fv " + featureVector);
         double fun = Double.valueOf(result.get(0));
-        current_fun = fun;
+        solution.fun = fun;
         return fun;
     }
 

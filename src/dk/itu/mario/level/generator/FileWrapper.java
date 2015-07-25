@@ -44,4 +44,8 @@ public class FileWrapper {
     public boolean exists() {
         return !file.isDirectory() && file.exists();
     }
+
+    public String getFilename() {
+        return this.filename;
+    }
 }

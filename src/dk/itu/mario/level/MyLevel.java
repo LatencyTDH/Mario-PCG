@@ -25,6 +25,7 @@ public class MyLevel extends RandomLevel {
     public int gaps = 0;
     public byte[][] map = getMap();
     public SpriteTemplate[][] st = getSpriteTemplate();
+    public double fun;
 
 
     private static Random levelSeedRandom = new Random();
