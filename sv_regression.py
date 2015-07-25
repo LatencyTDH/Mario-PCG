@@ -6,6 +6,7 @@ import numpy as np
 import cPickle
 import os
 import sys
+from optparse import OptionParser
 
 # loads a .arff data file
 def load_dataset(filename):
@@ -57,28 +58,50 @@ def build_model(filename, toSave=False):
         save_model(clf)
     return clf
 
+def format_feature_vector(fv):
+    """
+    Transforms the feature vector from a string into a
+    correctly formatted list to be used in the regression model.
+    """
+    return map(float,list(fv.split(',')))
+
 def main():
     clf = None
     filename = "ratings.arff"
-    test_predict = [0.705555,0.021981,0.046962,0.196528,0.028975,0,0,0,0,1]
 
-    if os.path.isfile('svr_model.pkl'):
-        # Occasionally rebuild SVR regression model with new training data
-        if (count_datalines(filename) % 10 == 0):
-            clf = build_model(filename, True)
-        else:
-            clf = load_model()
-    else:
+    # parse commandline arguments
+    op = OptionParser()
+    op.add_option("--rebuild",
+              action="store_true", dest="rebuild_model",
+              help="Rebuilds the regression model with new training data.")
+    op.add_option("--fv", 
+        action="store", dest="feature_vector", 
+        help="Predict regression score from the inputted feature vector")
+    op.add_option("--file", 
+        action="store", dest="input_file", 
+        help="File that contains the user's funness ratings. Defaults to 'ratings.arff'.")
+    (opts, args) = op.parse_args()
+
+    if len(args) > 0:
+        op.error("Error with argument format!")
+        sys.exit(1)
+
+    if opts.input_file:
+        filename = opts.input_file
+    if opts.rebuild_model:
+        print "Rebuilding SV-regression model on new training data..."
         clf = build_model(filename, True)
-
-    if sys.argv > 1:
-        print sys.argv
-
-    print clf.predict(test_predict)
+        print "Done."
+    if opts.feature_vector is not None:
+        if os.path.isfile('svr_model.pkl'):
+            clf = load_model()
+        else:
+            clf = build_model(filename, True)
+        try:
+            fv = format_feature_vector(opts.feature_vector)
+            print clf.predict(fv)[0]
+        except ValueError as e:
+            print e.message
 
 if __name__ == "__main__":
     main()
-    # print count_datalines('myratings.arff')
-    # print count_datalines('ratings.txt')
-    # X,y = load_dataset("myratings.arff")
-    # clf = train_linear_model(X,y)
