@@ -5,7 +5,12 @@ import dk.itu.mario.MarioInterface.LevelGenerator;
 import dk.itu.mario.MarioInterface.LevelInterface;
 import dk.itu.mario.level.MyLevel;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Random;
+
 
 public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelGenerator {
     static GamePlay playerMetrics;
@@ -15,18 +20,48 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
     public static long SEED = System.currentTimeMillis();
 
     private double temperature = 100000.0;
-    private double coolingRate = 0.9;
+    private double coolingRate = 0.6;
     private static Random generator = new Random(SEED);
     public static final int DIFFICULTY_LEVELS = 5; //Don't change this
     public static final double ABSOLUTE_TEMPERATURE = .00001;
+    //minimum number of user funness ratings before we ask sklearn to build the regression model
+    public static final int TRAINING_MINIMUM = 10;
+    private FileWrapper ratingsFile = new FileWrapper("ratings.arff");
 
     public LevelInterface generateLevel(GamePlay playerMetrics) {
+        boolean predictWithPythonModel = false;
+        if (ratingsFile.exists() && ratingsFile.countDataLines() >= TRAINING_MINIMUM) {
+            System.out.println("Rebuilding SV-regression model on new training data...");
+            rebuildPythonModel();
+            System.out.println("Done!");
+            predictWithPythonModel = true;
+        }
         this.playerMetrics = playerMetrics;
         fieldType = generator.nextInt(3);
-        MyLevel level = optimize(temperature, coolingRate);
+        MyLevel level = optimize(temperature, coolingRate, predictWithPythonModel);
         return level;
     }
 
+    private void rebuildPythonModel() {
+        executeFromCommandLine("python sv_regression.py --rebuild");
+    }
+
+    private static ArrayList<String> executeFromCommandLine(String command) {
+        ArrayList<String> stringList = new ArrayList<>();
+        Runtime run = Runtime.getRuntime();
+        try {
+            Process pr = run.exec(command);
+            BufferedReader in = new BufferedReader(new InputStreamReader(pr.getInputStream()));
+
+            String s = null;
+            while ((s = in.readLine()) != null) {
+                stringList.add(s);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return stringList;
+    }
     @Override
     public LevelInterface generateLevel(String detailedInfo) {
         // TODO Auto-generated method stub
@@ -35,23 +70,27 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
 
 
     // method to optimize using simulated annealing
-    public static MyLevel optimize(double startingTemperature, double coolingRate) {
+    public static MyLevel optimize(double startingTemperature, double coolingRate, boolean usePythonModel) {
         double t = startingTemperature;
         MyLevel currentSolution = new MyLevel(320, 15, new Random().nextLong(), 7, fieldType, playerMetrics, 0.2, 0.2, 0.2, 0.2, 0.2);
         //mutate current solution and test fitness
         while (t > ABSOLUTE_TEMPERATURE) {
-            double fitness = evaluate(currentSolution);
+            double fitness = evaluate(currentSolution, usePythonModel);
             MyLevel newSolution = mutate(currentSolution);
-            double newFitness = evaluate(newSolution);
+            double newFitness = evaluate(newSolution, usePythonModel);
             //change best solution to current solution if current solution is better
             if (newFitness > fitness) {
                 currentSolution = newSolution;
+                current_fun = newFitness;
+                System.out.println("Better: " + newFitness);
             }
             //change to a worse solution with certain probabilty
             else {
                 Double randomValue = generator.nextDouble();
                 if (randomValue < acceptanceProbability(fitness, newFitness, t)) {
                     currentSolution = newSolution;
+                    current_fun = newFitness;
+                    System.out.println("Worse: " + newFitness);
                 }
             }
             t = t * coolingRate;
@@ -102,34 +141,28 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
 
     //evaluate a solution based on our fun function, this is where ML comes in
     public static double evaluate(MyLevel solution) {
+        String featureVector = String.format("%f,%f,%f,%f,%f,%d,%d,%d,%d,%d",
+                solution.probBuildJump,
+                solution.probBuildCannons,
+                solution.probBuildHillStraight,
+                solution.probBuildTubes,
+                solution.probBuildStraight,
+                solution.difficulty,
+                solution.BLOCKS_COINS,
+                solution.BLOCKS_EMPTY,
+                solution.BLOCKS_POWER,
+                solution.ENEMIES);
 
-        double fun =
-                1 * solution.probBuildJump +
-                1 * solution.probBuildCannons +
-                1 * solution.probBuildHillStraight +
-                1 * solution.probBuildTubes +
-                1 * solution.probBuildStraight +
-                1 * solution.difficulty +
-                1 * solution.BLOCKS_COINS +
-                1 * solution.BLOCKS_EMPTY +
-                1 * solution.BLOCKS_POWER +
-                1 * solution.ENEMIES;
-        fun = 0;
+        ArrayList<String> result = executeFromCommandLine("python sv_regression.py --fv " + featureVector);
+        double fun = Double.valueOf(result.get(0));
         current_fun = fun;
         return fun;
     }
 
     public static double evaluate(MyLevel solution, boolean hasRegressionModel) {
-        if (!hasRegressionModel) {
+        if (hasRegressionModel) {
             return evaluate(solution);
         }
-        //TODO: Accept nonlinear regression model from scikit-learn output.
         return 0.0;
     }
-
-    public static double getDifficulty() {
-        //TODO: evaluate level difficulty
-        return 0.0;
-    }
-
 }
