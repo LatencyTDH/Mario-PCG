@@ -19,31 +19,34 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
     public static long SEED = System.currentTimeMillis();
 
     private double temperature = 100000.0;
-    private double coolingRate = 0.6;
+    private double coolingRate = 0.7;
     private static Random generator = new Random(SEED);
     public static final int DIFFICULTY_LEVELS = 5; //Don't change this
-    public static final double ABSOLUTE_TEMPERATURE = .00001;
+    public static final double ABSOLUTE_TEMPERATURE = .000001;
 
     //minimum number of user funness ratings before we ask sklearn to build the regression model
     public static final int TRAINING_MINIMUM = 10;
+    private final String regression = "sv";
     private FileWrapper ratingsFile = new FileWrapper("ratings.arff");
 
     public LevelInterface generateLevel(GamePlay playerMetrics) {
         boolean predictWithPythonModel = false;
         if (ratingsFile.exists() && ratingsFile.countDataLines() >= TRAINING_MINIMUM) {
-            System.out.println("Rebuilding SV-regression model on new training data...");
-            rebuildPythonModel(ratingsFile.getFilename());
+            System.out.println(String.format("Rebuilding %s-regression model on new training data...", regression));
+            rebuildPythonModel(regression,ratingsFile.getFilename());
             System.out.println("Done!");
             predictWithPythonModel = true;
         }
         this.playerMetrics = playerMetrics;
         fieldType = generator.nextInt(3);
+        System.out.println("Evaluating generated maps' funness...");
         MyLevel level = optimize(temperature, coolingRate, predictWithPythonModel);
         return level;
     }
 
-    private void rebuildPythonModel(String filename) {
-        executeFromCommandLine("python sv_regression.py --rebuild --file " + filename);
+    private void rebuildPythonModel(String regressionType, String filename) {
+        executeFromCommandLine(String.format("python sv_regression.py --rebuild %s --file %s",
+                regressionType, filename));
     }
 
     private static ArrayList<String> executeFromCommandLine(String command) {
@@ -99,12 +102,16 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
 
     private static void printMapStatistics(MyLevel solution) {
         System.out.println("probBuildJump: " + solution.probBuildJump);
-        System.out.println("difficulty: " + solution.difficulty);
         System.out.println("probBuildCannons: " + solution.probBuildCannons);
         System.out.println("probBuildHillStraight: " + solution.probBuildHillStraight);
         System.out.println("probBuildTubes: " + solution.probBuildTubes);
         System.out.println("probBuildStraight: " + solution.probBuildStraight);
-        System.out.println("fun: " + solution.fun);
+        System.out.println("difficulty: " + solution.difficulty);
+        System.out.println("blocksCoins: " + solution.BLOCKS_COINS);
+        System.out.println("blocksEmpty: " + solution.BLOCKS_EMPTY);
+        System.out.println("blocksPower: " + solution.BLOCKS_POWER);
+        System.out.println("enemies: " + solution.ENEMIES);
+        System.out.println("Predicted fun: " + solution.fun);
     }
 
     //method for calculating if a worse solution should be accepted

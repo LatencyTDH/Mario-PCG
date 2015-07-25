@@ -51,9 +51,12 @@ def count_datalines(filename):
     data_idx = text.index("@data")
     return text[data_idx:].count('\n') - 1
 
-def build_model(filename, toSave=False):
+def build_model(filename, toSave=False, regressionType='sv'):
     X,y = load_dataset(filename)
-    clf = train_SVR_model(X,y)
+    if regressionType == 'linear':
+        clf = train_linear_model(X,y)
+    else:
+        clf = train_SVR_model(X,y)
     if toSave:
         save_model(clf)
     return clf
@@ -72,8 +75,8 @@ def main():
     # parse commandline arguments
     op = OptionParser()
     op.add_option("--rebuild",
-              action="store_true", dest="rebuild_model",
-              help="Rebuilds the regression model with new training data.")
+              action="store", dest="rebuild_model",
+              help="Rebuilds the regression model with new training data. (Linear or SV)")
     op.add_option("--fv", 
         action="store", dest="feature_vector", 
         help="Predict regression score from the inputted feature vector")
@@ -89,8 +92,11 @@ def main():
     if opts.input_file:
         filename = opts.input_file
     if opts.rebuild_model:
-        print "Rebuilding SV-regression model on new training data..."
-        clf = build_model(filename, True)
+        print "Rebuilding %s-regression model on new training data..." % opts.rebuild_model
+        if 'linear' in opts.rebuild_model.lower():
+            clf = build_model(filename, True, 'linear')
+        else:
+            clf = build_model(filename, True, 'sv')
         print "Done."
     if opts.feature_vector is not None:
         if os.path.isfile('svr_model.pkl'):
@@ -99,7 +105,11 @@ def main():
             clf = build_model(filename, True)
         try:
             fv = format_feature_vector(opts.feature_vector)
-            print clf.predict(fv)[0]
+            value = clf.predict(fv)
+            if isinstance(value, np.ndarray):
+                print value[0]
+            else:
+                print value
         except ValueError as e:
             print e.message
 
