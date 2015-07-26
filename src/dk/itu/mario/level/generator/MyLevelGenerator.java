@@ -19,7 +19,7 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
     public static long SEED = System.currentTimeMillis();
 
     private double temperature = 100000.0;
-    private double coolingRate = 0.1;
+    private double coolingRate = 0.7;
     private static Random generator = new Random(SEED);
     public static final int DIFFICULTY_LEVELS = 5; //Don't change this
     public static final double ABSOLUTE_TEMPERATURE = .000001;
