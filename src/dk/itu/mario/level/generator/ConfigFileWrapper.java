@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 /**
- * This file processes the CONFIG.txt file.
+ * This class processes the CONFIG.txt file.
  * Created by sd on 7/26/15.
  */
 public class ConfigFileWrapper extends FileWrapper {
@@ -16,11 +16,14 @@ public class ConfigFileWrapper extends FileWrapper {
         super(filename);
     }
 
+    //Stores the config.txt variables and their values in a HashMap
     public void process() {
         try (BufferedReader input = new BufferedReader(new FileReader(getFilename()))) {
             String s = null;
             while ((s = input.readLine()) != null) {
-                processExpression(s);
+                if (s.contains("=")) {
+                    processExpression(s);
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -31,7 +34,7 @@ public class ConfigFileWrapper extends FileWrapper {
         return this.preferences;
     }
 
-    public void processExpression(String expression) {
+    private void processExpression(String expression) {
         String[] parts = expression.split("=");
         preferences.put(parts[0].trim(), parts[1].trim());
     }
