@@ -27,3 +27,5 @@ function.
 **ant play-default**: Plays a random level that is built using pre-authored chunks.
 
 **ant clean**: Removes the .class files contained in the bin/ directory.
+
+**ant clean-super**: Performs a regular clean followed by removing the ratings.arff and svr_model.pkl files.

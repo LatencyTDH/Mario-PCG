@@ -19,7 +19,7 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
     public static long SEED = System.currentTimeMillis();
 
     private double temperature = 100000.0;
-    private double coolingRate = 0.7;
+    private double coolingRate = 0.1;
     private static Random generator = new Random(SEED);
     public static final int DIFFICULTY_LEVELS = 5; //Don't change this
     public static final double ABSOLUTE_TEMPERATURE = .000001;
@@ -92,6 +92,8 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
                 if (randomValue < acceptanceProbability(fitness, newFitness, t)) {
                     currentSolution = newSolution;
                     System.out.println("Worse: " + currentSolution.fun);
+                } else {
+                    System.out.println("Same: " + currentSolution.fun);
                 }
             }
             t = t * coolingRate;
