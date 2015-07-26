@@ -1,4 +1,5 @@
-# Mario-AI  
+# Mario-AI
+### Team Q (Undergrads): Sean Dai & Ore Asonibare
 
 This project uses the simulated annealing algorithm for procedural content generation of Mario levels. The function used
 to evaluate the quality of a generated level is based on a "funness" metric that the player assigns. A nonlinear
