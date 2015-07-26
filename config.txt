@@ -1,0 +1,5 @@
+temperature=100000.0
+coolingRate=0.7
+TRAINING_MINIMUM=50
+regression=sv
+ratingsFile=ratings.arff

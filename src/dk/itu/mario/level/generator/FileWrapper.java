@@ -40,6 +40,9 @@ public class FileWrapper {
         return 0;
     }
 
+    public void process() {
+        System.out.println("Processing...");
+    }
     //Returns true if the file exists in the current directory.
     public boolean exists() {
         return !file.isDirectory() && file.exists();

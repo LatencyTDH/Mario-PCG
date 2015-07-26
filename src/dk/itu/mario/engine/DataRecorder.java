@@ -4,6 +4,7 @@ import dk.itu.mario.MarioInterface.GamePlay;
 import dk.itu.mario.engine.sprites.*;
 import dk.itu.mario.level.MyLevel;
 import dk.itu.mario.level.RandomLevel;
+import dk.itu.mario.level.generator.MyLevelGenerator;
 import dk.itu.mario.scene.LevelScene;
 
 import java.io.*;
@@ -815,11 +816,12 @@ public class DataRecorder {
         System.out.println(detailedLog);
         write(detailedLog);
 
-        String filename = "ratings.arff";
+        String filename = MyLevelGenerator.ratingsFile.getFilename();
         double mapRating = enterRating();
         if (!new File(filename).exists()) {
             createFileWithHeader(filename);
         }
+        System.out.println("Writing feature vector to " + filename);
         append(filename, getFeatureVector(mapRating));
 
     }

@@ -52,7 +52,7 @@ CIG 2009. IEEE Symposium on, 2009, pp. 132–139.
 
 2. S. Rabin, Game AI Pro 2: Collected Wisdom of Game AI Professionals. Boca Raton, Florida: CRC Press.
 
-3. S. J. Russell, P. Norvig, and E. Davis, Artificial intelligence: a modern approach, 3rd ed.
+3. S. J. Russell, P. Norvig, and E. Davis, Artificial Intelligence: A Modern Approach, 3rd ed.
 Upper Saddle River: Prentice Hall, 2010.
 
 4. http://scikit-learn.org/stable/modules/svm.html

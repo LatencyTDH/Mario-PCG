@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 
@@ -17,31 +18,59 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
     static int fieldType = LevelInterface.TYPE_CASTLE;
 
     public static long SEED = System.currentTimeMillis();
-
-    private double temperature = 100000.0;
-    private double coolingRate = 0.7;
     private static Random generator = new Random(SEED);
+
     public static final int DIFFICULTY_LEVELS = 5; //Don't change this
     public static final double ABSOLUTE_TEMPERATURE = .000001;
 
+    private double temperature;
+    private double coolingRate;
+    private String regression;
+    public static FileWrapper ratingsFile;
+    private FileWrapper config = new ConfigFileWrapper("config.txt");
     //minimum number of user funness ratings before we ask sklearn to build the regression model
-    public static final int TRAINING_MINIMUM = 50;
-    private final String regression = "sv";
-    private FileWrapper ratingsFile = new FileWrapper("ratings.arff");
+    private int TRAINING_MINIMUM;
+
 
     public LevelInterface generateLevel(GamePlay playerMetrics) {
         boolean predictWithPythonModel = false;
+        loadConfigPreferences();
+
         if (ratingsFile.exists() && ratingsFile.countDataLines() >= TRAINING_MINIMUM) {
             System.out.println(String.format("Rebuilding %s-regression model on new training data...", regression));
             rebuildPythonModel(regression,ratingsFile.getFilename());
             System.out.println("Done!");
             predictWithPythonModel = true;
         }
+
         this.playerMetrics = playerMetrics;
         fieldType = generator.nextInt(3);
         System.out.println("Evaluating generated maps' funness...");
         MyLevel level = optimize(temperature, coolingRate, predictWithPythonModel);
         return level;
+    }
+
+    //Loads the variables with the ones stored in config.txt
+    private void loadConfigPreferences() {
+        config.process();
+        HashMap<String, String> prefs = ((ConfigFileWrapper) config).getPreferences();
+        for (String attribute: prefs.keySet()) {
+            String value = prefs.get(attribute).trim();
+
+            if (attribute.equalsIgnoreCase("temperature")) {
+                this.temperature = Double.parseDouble(value);
+            } else if (attribute.equalsIgnoreCase("coolingRate")) {
+                this.coolingRate = Double.parseDouble(value);
+            } else if (attribute.equalsIgnoreCase("TRAINING_MINIMUM")) {
+                this.TRAINING_MINIMUM = Integer.parseInt(value);
+            } else if (attribute.equalsIgnoreCase("regression")) {
+                this.regression = value;
+            } else if (attribute.equalsIgnoreCase("ratingsFile")) {
+                this.ratingsFile = new FileWrapper(value);
+            }
+        }
+        System.out.println(String.format("Config.txt settings: %f %f %d %s %s", temperature, coolingRate, TRAINING_MINIMUM, regression,
+                ratingsFile.getFilename()));
     }
 
     private void rebuildPythonModel(String regressionType, String filename) {
