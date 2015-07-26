@@ -25,7 +25,7 @@ public class MyLevelGenerator extends CustomizedLevelGenerator implements LevelG
     public static final double ABSOLUTE_TEMPERATURE = .000001;
 
     //minimum number of user funness ratings before we ask sklearn to build the regression model
-    public static final int TRAINING_MINIMUM = 10;
+    public static final int TRAINING_MINIMUM = 50;
     private final String regression = "sv";
     private FileWrapper ratingsFile = new FileWrapper("ratings.arff");
 
