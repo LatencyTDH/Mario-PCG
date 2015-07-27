@@ -2,11 +2,12 @@
 ### Team Q (Undergrads): Sean Dai & Ore Asonibare
 
 This project uses the simulated annealing algorithm for procedural content generation of Mario levels. The function used
-to evaluate the quality of a generated level is based on a "funness" metric that the player assigns. A nonlinear
-regression model provided by the **scikit-learn** library then finds the function that best approximates the player's
-rating pattern. In particular, the nonlinear regression model uses a [support vector machine] (http://scikit-learn.org/stable/modules/svm.html#regression)
-with a radial basis function as its kernel. Hence, the game incorporates AI as a key element in the gaming experience,
-as the generated levels will be directly tailored to a player's unique preferences.
+to evaluate the quality of a generated level is based on a "funness" metric that the player assigns. In order to find
+the function that best approximates the player's rating pattern, the game builds a nonlinear regression model with
+algorithms provided by the **scikit-learn** library. In particular, the nonlinear regression model uses a
+[support vector machine] (http://scikit-learn.org/stable/modules/svm.html#regression) with a radial basis kernel
+function. Hence, the game incorporates AI as a key element in the gaming experience, as the generated levels will be
+directly tailored to a player's unique gaming preferences.
 
 In this project, the map generation approach I followed is a hybrid one that combines constructionist and randomized
 optimization techniques. That is, the constructionist approach first initializes a randomly generated map that is pieced
