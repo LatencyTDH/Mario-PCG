@@ -25,9 +25,10 @@ def train_SVR_model(X,y):
     """
     Returns the CV-fitted SVM model according to the given training data.
     """
-    clf = GridSearchCV(SVR(kernel='rbf', gamma=0.1), cv=5,
-                   param_grid={"C": np.logspace(-4,4,9),
-                               "gamma": np.logspace(-2, 2, 5)})
+    # clf = GridSearchCV(SVR(kernel='rbf', gamma=0.1), cv=5,
+    #                param_grid={"C": np.logspace(-4,4,9),
+    #                            "gamma": np.logspace(-2, 2, 5)})
+    clf = SVR(kernel='rbf', gamma=0.1, C=1e3, epsilon=0.025)
     clf.fit(X,y)
     return clf
 

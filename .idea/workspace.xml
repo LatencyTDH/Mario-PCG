@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12625dea-43f9-414d-b4e9-ca863bea3fcb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.txt" afterPath="$PROJECT_DIR$/config.txt" />
-    </list>
+    <list default="true" id="12625dea-43f9-414d-b4e9-ca863bea3fcb" name="Default" comment="" />
     <ignored path="Mario-AI.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -813,12 +810,12 @@
       <workItem from="1437494896567" duration="9389000" />
       <workItem from="1437520220782" duration="161000" />
       <workItem from="1437521667643" duration="10668000" />
-      <workItem from="1437761474345" duration="27102000" />
+      <workItem from="1437761474345" duration="27494000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61667000" />
+    <option name="totallyTimeSpent" value="62059000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -831,7 +828,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="23" width="1400" height="860" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />

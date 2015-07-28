@@ -1,5 +1,5 @@
 temperature=100000.0
-coolingRate=0.6
+coolingRate=0.2
 TRAINING_MINIMUM=50
 regression=sv
-ratingsFile=ratings.arff
+ratingsFile=speedrun.arff

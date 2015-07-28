@@ -1,5 +1,4 @@
 # Mario-AI
-### Team Q (Undergrads): Sean Dai & Ore Asonibare
 
 This project uses the simulated annealing algorithm for procedural content generation of Mario levels. The function used
 to evaluate the quality of a generated level is based on a "funness" metric that the player assigns. In order to find
@@ -20,7 +19,7 @@ as training data to the nonlinear regression model, which is used to refine the 
 
 ## How to Run the Project
 
-1. Clone the repository https://github.gatech.edu/sdai30/Mario-AI.git.
+1. Clone this repository.
 
 2. Install the required dependencies. For Java, install **ant**. For the game to build the player "funness" model,
 install **Python** and the Python libraries **numpy**, **scipy**, and **scikit-learn**.
