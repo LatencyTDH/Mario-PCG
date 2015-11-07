@@ -97,6 +97,12 @@ where
 
     fun = 0 for dislike, 1 for like
 
+## Sample Images
+
+![1](images/pca_fun.png)
+![2](images/lin_model.png)
+![3](images/sa_fun.png)
+
 ## Sources
 1. C. Pedersen, J. Togelius, and G. N. Yannakakis, “Modeling player experience in super mario bros,” in Computational Intelligence and Games, 2009.
 CIG 2009. IEEE Symposium on, 2009, pp. 132–139.
